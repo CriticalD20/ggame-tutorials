@@ -4,8 +4,9 @@ by E. Dennison
 """
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame
 
-SCREEN_WIDTH = 640
-SCREEN_HEIGHT = 480
+SCREEN_WIDTH = 1665
+SCREEN_HEIGHT = 945
+
 
 
 class SpaceShip(Sprite):
