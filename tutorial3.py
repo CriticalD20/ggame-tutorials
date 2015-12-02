@@ -60,10 +60,9 @@ class SpaceGame(App):
         super().__init__(width, height)
         BG = ImageAsset("images/starfield.jpg")
         bgsprite = background(BG, (0,0))
-        bgsprite.width = 1000
-        SpaceShip((100,100))
-        SpaceShip((150,150))
-        SpaceShip((200,50))
+        bgsprite.width = SCREEN_WIDTH
+        bgsprite.height = SCREEN_HEIGHT
+        SpaceShip((800,450))
         
         
     
