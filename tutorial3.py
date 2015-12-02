@@ -11,8 +11,19 @@ class background(Sprite):
     def __init__(self, asset, position):
         super().__init__(asset, position)
 
-
-
+class Sun(background):
+    
+    asset = ImageAsset("images/sun.png")
+    width = 80
+    height = 76
+"""
+    def __init__(self, position):
+        super().__init__(Sun.asset, position)
+        self.mass = 30*1000
+        self.fxcenter = 0.5
+        self.fycenter = 0.5
+        self.circularCollisionModel()
+"""
 class SpaceShip(Sprite):
     """
     Animated space ship
@@ -43,6 +54,10 @@ class SpaceShip(Sprite):
         else:
             self.setImage(0)
 
+#////////////////////////////////////////////////////////////////////////////////
+        [self.app.listenKeyEvent("keydown", k, self.controldown) for k in keys]
+        [self.app.listenKeyEvent("keyup", k, self.controlup) for k in keys]
+#////////////////////////////////////////////////////////////////////////////////       
     def thrustOn(self, event):
         self.thrust = 1
 
@@ -59,10 +74,12 @@ class SpaceGame(App):
     def __init__(self, width, height):
         super().__init__(width, height)
         BG = ImageAsset("images/starfield.jpg")
+        BGS = ImageAsset("images/sun.png")
         bgsprite = background(BG, (0,0))
         bgsprite.width = SCREEN_WIDTH
         bgsprite.height = SCREEN_HEIGHT
-        SpaceShip((800,450))
+        bgs_sprite = Sun(BGS, (800, 450))
+        SpaceShip((400,450))
         
         
     
